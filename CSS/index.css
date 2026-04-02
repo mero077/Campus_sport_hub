@@ -199,7 +199,7 @@ header{
 
 .form input,.form textarea{
     border-radius: 15px;
-    padding: 10px;
+   
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: #3B82F6 2px solid;
     margin-top: 10px;
@@ -214,7 +214,7 @@ header{
 }
 
 .image{
-    padding: 20px;
+    
     background-color: white;
     display: flex;
     justify-content: center;
