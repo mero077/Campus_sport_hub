@@ -54,7 +54,7 @@ body {
   font-size: 40px;
   color: #1E3A8A;
 }
-#welcome h3 {
+#welcome h2 {
   font-size: 40px;
   color: #F97316;
 }
@@ -125,16 +125,21 @@ body {
 
 #about h2 {
     color: #1E3A8A;
-    border-left: 5px solid #F97316;
-    padding-left: 10px;
+     text-align: center;
 }
 .info p{
       color: #1E3A8A;
+       text-align: center;
 }
 
 .info h3{
     color: #F97316;
+ text-align: center;
+}
 
+.team h2{
+   text-align: center;
+   color: #1E3A8A;
 }
 
 table {
@@ -161,14 +166,7 @@ tr:hover {
     background-color: #fef3c7;
 }
 
-a {
-    color: #F97316;
-    font-weight: bold;
-}
 
-a:hover {
-    text-decoration: underline;
-}
 
 input[type="submit"] {
     background-color: #F97316;

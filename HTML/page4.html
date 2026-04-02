@@ -19,43 +19,51 @@
     <div class="card">
         <h3>Football Tournament</h3>
         <p>Join our campus football championship.</p>
+        <p>Date: 5 june , At 12:00PM</p>
+        <p>Click to join the Tournament</p>
         <button>Join</button>
     </div>
 
     <div class="card">
         <h3>Basketball Challenge</h3>
         <p>Compete with other students in basketball.</p>
+         <p>Date: 11 May, At 2:00PM</p>
+        <p>Click to join the Challenge</p>
         <button>Join</button>
     </div>
 
     <div class="card">
         <h3>Running Marathon</h3>
         <p>Participate in our annual marathon event.</p>
+         <p>Date: 1 Oct , At 10:00AM</p>
+        <p>Click to join the Marathon</p>
         <button>Join</button>
     </div>
 
 </section>
 
 <section>
-    <h2>Join an Event</h2>
+    <h2>Join a Sport team</h2>
 
     <form>
 
         <label>Full Name:</label><br>
-        <input type="text" name="name"><br><br>
+        <input type="text" name="Fullname" maxlength="20" minlength="3" placeholder=" Enter your name" size="30" pattern="[a-zA-z]+" required autofocus><br><br>
 
         <label>Student ID:</label><br>
-        <input type="text" name="id"><br><br>
+        <input type="text" name="id" pattern="[0-9]{7}" placeholder="enter your id" required><br><br>
 
         <label>Select Sport:</label><br>
         <select name="sport">
+             <option value="">select</option>
             <option>Football</option>
             <option>Basketball</option>
-            <option>Running</option>
+            <option>Padel</option>
         </select><br><br>
 
         <label>Skill Level:</label><br>
         <select name="level">
+             <option value="">select</option>
             <option>Beginner</option>
             <option>Intermediate</option>
             <option>Advanced</option>
