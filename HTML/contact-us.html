@@ -3,9 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>contact-us</title>
+    <link rel="stylesheet" href="/CSS/contact.css">
 </head>
 <body>
+
+    <div class="page">
+        <div class="form">
+    <form method="post" action="#">
+<header>Contact Us</header>
+<h5>Please Enter Your Information</h5>
+
+<!--Name-->
+<P>
+<label>First name:
+<input type="text" name="firstname" maxlength="10" minlength="3" placeholder=" Enter your first name" size="30" pattern="[a-zA-z]+" required autofocus>
+</label>
+</P>
+
+<P>
+<label>Last name:
+<input type="text" name="lastname" maxlength="10" minlength="3" placeholder=" Enter your Last name"  size="30" pattern="[a-zA-z]+" required>
+</label>
+</P>
+
+<!---emaile-->
+<p>
+    <label>Emaile Address:
+        <input type="email" name="email" maxlength="30" minlength="10" placeholder=" Enter your Email" size="30" required >
+    </label>
+</p>
+
+<!--gender-->
+<p>
+    <label>Gender:
+        <select name="gender" required>
+            <option value="">select</option>
+            <option>Female</option>
+            <option>Male</option>
+        </select>
+    </label>
+</p>
+
+<!--number-->
+<p>
+    <label>Phone Number:
+        <input type="tel" name="number" placeholder="05***" required pattern="[0-9]{10}">
+
+    </label>
+</p>
+
+<!--birth date-->
+<p>
+    <label>Date of birth:
+<input type="date" name="date" required>
+    </label>
+</p>
+
+<!--lang-->
+<p>
+    <label>Language:
+        <select name="language" required>
+             <option value="">select</option>
+            <option>English</option>
+            <option>Arabic</option>
+            <option>French</option>
+            <option>Chinese</option>
+        </select>
+    </label>
+</p>
+
+<h5>Please write your inquiry or question in the box shown in front of you</h5>
+<!--meassage-->
+<p>
+    <label>Meassage Box:
+        <textarea name="meassage" rows="5" cols="25"></textarea>
+    </label>
+</p>
+ 
+<!--submit-->
+<p>
+    <input type="submit" value="Send my Meassage">
+</p>
+
+<P>We will reply to your Meassage as soon as possible</P>
+
+    </form>
+        </div>
+
+        <div class="image">
+            <img src="/Media/photo_.jpg" alt="contact-us image" width="501">
+        </div>
+    </div>
    
 </body>
 </html>
