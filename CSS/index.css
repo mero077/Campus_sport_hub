@@ -6,15 +6,15 @@ body {
 
 /* Navbar */
 .navbar {
+  display: flex;
   background-color: #1E3A8A;
   align-items: center;
-  justify-content: space-between;  
-  padding: 1px;
+  padding: 8px 20px;
   position: sticky;
 }
 
 .navbar img {
-  height: 70px;
+  height: 60px;
 }
 
 .nav-links a {
@@ -26,14 +26,15 @@ body {
 .navbar ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-  height: 60px;
+  padding:0;
+  gap: 40px;
   display: flex;
   justify-content: center;
+  
 }
 
 .navbar li {
-  margin:30px;
+  gap:30px;
 }
 
 .navbar a {
@@ -44,18 +45,18 @@ body {
 
 .navbar :hover{color: #3B82F6;}
 
-.welcome {
+#welcome {
   text-align: center;
   padding: 80px 20px;
 }
 
-.welcome h1 {
+#welcome h3 {
   font-size: 40px;
-  color: #1E3A8A;
+  color: #F97316;
 }
 
-.welcome p {
-  font-size: 18px;
+#welcome p {
+  font-size: 25px;
   color: #444;
   margin-top: 10px;
 }
@@ -63,7 +64,7 @@ body {
 /* Button */
 .Joinbtn {
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 20px 35px;
   background-color:#F97316 ;
   color: white;
   border: none;
@@ -76,12 +77,12 @@ body {
 }
 
 /* Features */
-.features {
+#features {
   text-align: center;
   padding: 60px 20px;
 }
 
-.features h2 {
+#features h2 {
   color: #1E3A8A;
 }
 
@@ -110,4 +111,61 @@ body {
 
 .card3 {
   background-color: #F97316;
+}
+
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    color: #1E3A8A;
+    border-left: 5px solid #F97316;
+    padding-left: 10px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #1E3A8A;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #fef3c7;
+}
+
+a {
+    color: #F97316;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #1E3A8A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #F97316;
+    color: white;
 }
