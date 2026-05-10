@@ -114,20 +114,20 @@
 <!--Name-->
 <P>
 <label>First name:
-<input type="text" name="firstname" maxlength="10" minlength="3" placeholder=" Enter your first name" size="30" pattern="[a-zA-z]+" required autofocus>
+<input type="text" name="firstname" maxlength="10" minlength="3" placeholder=" Enter your first name" size="30" pattern="[a-zA-Z]+" required autofocus>
 </label>
 </P>
 
 <P>
 <label>Last name:
-<input type="text" name="lastname" maxlength="10" minlength="3" placeholder=" Enter your Last name"  size="30" pattern="[a-zA-z]+" required>
+<input type="text" name="lastname" maxlength="10" minlength="3" placeholder=" Enter your Last name"  size="30" pattern="[a-zA-Z]+" required>
 </label>
 </P>
 
 <!---emaile-->
 <p>
-    <label>Emaile Address:
-        <input type="email" name="email" maxlength="30" minlength="10" placeholder=" Enter your Email" size="30" required >
+    <label>Email Address:
+        <input type="email" name="email" maxlength="30" minlength="5" placeholder=" Enter your Email" size="30" required >
     </label>
 </p>
 
@@ -145,7 +145,7 @@
 <!--number-->
 <p>
     <label>Phone Number:
-        <input type="tel" name="number" placeholder="05***" required pattern="[0-9]{10}">
+        <input type="tel" name="number" placeholder="051***" required pattern="[0-9]{10}">
 
     </label>
 </p>
@@ -153,7 +153,7 @@
 <!--birth date-->
 <p>
     <label>Date of birth:
-<input type="date" name="date" required>
+<input type="date" name="date" required max="2009-12-30"> 
     </label>
 </p>
 
@@ -173,8 +173,8 @@
 <h4>Please write your inquiry or question in the box shown in front of you</h4>
 <!--meassage-->
 <p>
-    <label>Meassage Box:
-        <textarea name="meassage" rows="5" cols="25"></textarea>
+    <label>Message Box:
+        <textarea name="message" rows="5" cols="25" required minlength="10"></textarea>
     </label>
 </p>
  
@@ -183,7 +183,7 @@
     <input type="submit" value="Send my Meassage">
 </p>
 
-<P>We will reply to your Meassage as soon as possible</P>
+<P>We will reply to your Message as soon as possible</P>
 
     </form>
         </div>
@@ -192,11 +192,14 @@
             <img src="/Media/photo_.jpg" alt="contact-us image" width="500">
         </div>
     </div>
-
+<p id="msg" style="color: red;"></p>
 
 <footer>
     <p>© 2026 Campus Sports Hub</p>
 </footer>
+
+
+<script src="/JS/validation.js"></script>
 
 
 </body>
