@@ -6,20 +6,20 @@ form.addEventListener('submit', e=> {
 let messages = [];
 
 //presence
-messages = isFilled("firstname", messages, "first name is missing");
-messages = isFilled("lastname", messages, "last name is missing");
-messages = isFilled("email", messages, "email is missing");
-messages = isFilled("message", messages, "messageis missing");
+messages = isFilled("firstname", messages, "First name is missing");
+messages = isFilled("lastname", messages, "Last name is missing");
+messages = isFilled("email", messages, "Email is missing");
+messages = isFilled("message", messages, "Message missing");
 
 //format
-messages = isEmail("email", messages, "email format is wrong");
-messages = isPhone("number", messages, "phone number must start with 05 and be 10 numbers");
+messages = isEmail("email", messages, "Email format is wrong");
+messages = isPhone("number", messages, "Phone number must start with 05 and be 10 numbers");
 
 //whitelist
 const genders = ['Female', 'Male'];
 const languages = ['English', 'Arabic', 'French', 'Chinese'];
-messages = isWhitelist("gender", genders, messages, "selection is invalied ");
-messages = isWhitelist("language", languages, messages, "selection is invalied ");
+messages = isWhitelist("gender", genders, messages, "Gender selection is invalied ");
+messages = isWhitelist("language", languages, messages, " Language selection is invalied ");
 
 //errors
 if(messages.length > 0){
@@ -41,7 +41,7 @@ function isFilled(selector, messages, msg){
 
 function isEmail(selector, messages, msg){
     const val = document.getElementsByName(selector)[0].value.trim();
-    if(!val.match("[a-z0-9]+@[a-z]+//.[a-z]{2,4}")){
+    if(!val.match("[a-z0-9]+@[a-z]+\\.[a-z]{2,4}")){
         messages.push(msg);
     }
     return messages;
