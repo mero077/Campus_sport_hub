@@ -47,7 +47,7 @@ function getContactValidation() {
       .isNumeric().withMessage("Phone number must contain numbers only")
       .isLength({ min: 10, max: 10 }).withMessage("Phone number must be 10 digits"),
 
-    check("massege")
+    check("message")
       .notEmpty().withMessage("Message is required")
       .isLength({ min: 5, max: 200 }).withMessage("Message must be between 5 and 200 characters")
       .trim()
@@ -65,7 +65,7 @@ function getRegistrationValidation() {
       .trim()
       .escape(),
 
-    check("StudentID")
+    check("id")
       .notEmpty().withMessage("Student ID is required")
       .isNumeric().withMessage("Student ID must be numbers only"),
 
@@ -78,7 +78,7 @@ function getRegistrationValidation() {
     check("college")
       .notEmpty().withMessage("College is required"),
 
-    check("Email")
+    check("email")
       .notEmpty().withMessage("Email is required")
       .isEmail().withMessage("Invalid email format")
       .normalizeEmail()
@@ -108,7 +108,7 @@ if (!errors.isEmpty()) {
     Phone      : req.body.number,
     DOB        : req.body.DOB,
     Lang       : req.body.language,
-    Msg        : req.body.massege,
+    Msg        : req.body.message,
   };
 
   const query = "INSERT INTO contact_us SET ?";
@@ -144,12 +144,12 @@ if (!errors.isEmpty()) {
 }
   const data = {
     Full_Name   : req.body.Fullname,
-    Student_ID  : req.body.StudentID,
+    Student_ID  : req.body.id,
     Event       : req.body.sport,
     Skill_Level : req.body.level,
     College     : req.body.college,
     Gender      : req.body.gender,
-    Email       : req.body.Email,
+    Email       : req.body.email,
   };
 
   const query = "INSERT INTO registration SET ?";
@@ -171,5 +171,5 @@ app.get("/registration/view", (req, res) => {
 
 // Activating server
 app.listen(port, () => {
-  console.log(Server is running on port ${port});
+  console.log('Server is running on port ${port}');
 });

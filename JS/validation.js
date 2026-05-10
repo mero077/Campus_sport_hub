@@ -41,7 +41,7 @@ function isFilled(selector, messages, msg){
 
 function isEmail(selector, messages, msg){
     const val = document.getElementsByName(selector)[0].value.trim();
-    if(!val.match("[a-z0-9]+@[a-z]+\\.[a-z]{2,4}")){
+    if(!val.match("[a-z0-9]+@[a-z]+\.[a-z]{2,4}")){
         messages.push(msg);
     }
     return messages;
