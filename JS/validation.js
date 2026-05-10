@@ -29,7 +29,7 @@ if(messages.length > 0){
 
 
 });
-
+//functions
 function isFilled(selector, messages, msg){
     const val = document.getElementsByName(selector)[0].value.trim();
     if(val.length < 1){
