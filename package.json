@@ -1,0 +1,26 @@
+{
+  "name": "campus_sport_hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mero077/Campus_sport_hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mero077/Campus_sport_hub/issues"
+  },
+  "homepage": "https://github.com/mero077/Campus_sport_hub#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql": "^2.18.1"
+  }
+}
