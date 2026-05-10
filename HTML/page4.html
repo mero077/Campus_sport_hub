@@ -4,76 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/CSS/style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Join Us</h1>
+
+    
+    <h1>Join the Events!</h1>
+
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about-us.html">About</a>
-</nav>
-
 <section>
-    <h2>Sports Events</h2>
+    <h2>Our Currently available Sports Events</h2>
 
     <div class="card">
         <h3>Football Tournament</h3>
         <p>Join our campus football championship.</p>
-        <button>Join</button>
+        <p>Date: 5 june , At 12:00PM</p>
+        
+      
     </div>
 
     <div class="card">
         <h3>Basketball Challenge</h3>
         <p>Compete with other students in basketball.</p>
-        <button>Join</button>
+         <p>Date: 11 May, At 2:00PM</p>
+        
     </div>
 
     <div class="card">
         <h3>Running Marathon</h3>
         <p>Participate in our annual marathon event.</p>
-        <button>Join</button>
+         <p>Date: 1 Oct , At 10:00AM</p>
+        
     </div>
 
 </section>
 
 <section>
-    <h2>Join an Event</h2>
+    <h2>Join a Sport Event</h2>
 
     <form>
 
         <label>Full Name:</label><br>
-        <input type="text" name="name"><br><br>
+        <input type="text" name="Fullname" id="Fullname" maxlength="20" minlength="3" placeholder=" Enter your name" size="30" pattern="[a-zA-Z]+" required autofocus><br><br>
 
         <label>Student ID:</label><br>
-        <input type="text" name="id"><br><br>
+        <input type="text" name="id" id="studentid"  pattern="[0-9]{7}" placeholder="Enter your id" required><br><br>
 
-        <label>Select Sport:</label><br>
-        <select name="sport">
-            <option>Football</option>
-            <option>Basketball</option>
-            <option>Running</option>
+        <label>The Event you want to join:</label><br>
+        <select name="sport" required>
+             <option value="">select</option>
+            <option>Football Tournament</option>
+            <option>Basketball Challenge</geoption>
+            <option>Running Marathon</option>
         </select><br><br>
 
-        <label>Skill Level:</label><br>
-        <select name="level">
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
-        </select><br><br>
+        <label>Your Skill Level:</label><br>
+        <label>Beginner<input type="radio" name="level" id="Beginner" required value="Beginner"></label>
+        <label>Intermediate<input type="radio" name="level" id="Intermediate" value="Intermediate"></label>
+        <label>Advanced<input type="radio" name="level" id="Advanced" value="Advanced"></label>
+        <br><br>
 
-        <input type="submit" value="Submit">
+        <label>Your college: </label><br>
+        <select name="college" required>
+            <option value="">select</option>
+            <option>Computer Science</option>
+            <option>Science</option>
+            <option>Medicine</option>
+            <option>Applied Medical Science</option>
+            <option>Engineering</option>
+            <option>Business</option>
+            <option>Arts & Humanities</option>
+        </select>
+         
+         <br><br>
+
+        <label>Gender: </label><br>
+        <input type="text" name="gender" id="gender" required pattern="[a-zA-Z]+" placeholder="Enter your gender">
+        <br><br>
+
+        <label>Email Address:</label><br>
+        <input type="email" name="email" maxlength="30" minlength="10" placeholder=" Enter your Email" size="30" required ><br><br>
+
+  
+        <input type="submit" id="registration" value="Submit">
     </form>
 
 </section>
 
+<p id="msg" style="color: red;"></p>
+
 <footer>
     <p>© 2026 Campus Sports Hub</p>
 </footer>
-
+<script src="/JS/page4.js"></script>
 </body>
 </html>

@@ -12,16 +12,6 @@ header {
 }
 
 
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #F97316;
-}
 
 section {
     padding: 20px;
@@ -33,37 +23,9 @@ h2 {
     padding-left: 20px;
 }
 
-table {
-    width: 80%;
-    margin: auto;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th {
-    background-color: #1E3A8A;
-    color: white;
-}
-
-th, td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
-
-tr:hover {
-    background-color: #fef3c7;
-}
-
-a {
-    color: #F97316;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
+h3{
+    color: #1E3A8A;
+    font-size: medium;
 }
 
 footer {
@@ -79,13 +41,3 @@ input[type="submit"] {
     color: white;
 }
 
-img {
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
-header img {
-    border: 4px solid #ff7a00;
-    border-radius: 10px;
-}

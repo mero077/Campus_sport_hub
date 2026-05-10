@@ -11,24 +11,195 @@
   <nav class="navbar">
   <img src="/Media/runner2.png" alt="logo">
     <ul>
-      <li><a href="#Home">Home</a></li>
-      <li><a href="#Features">Features</a></li>
-      <li><a href="#AboutUs">About us</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#welcome">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#page">Contact</a></li>
     </ul>
   </nav>
-
-  <section class="welcome">
+    
+  <section id="welcome">
+        <h1>Campus Sports Hub</h1>
     <h2>Join. Compete. Connect.</h2>
     <p>Discover exciting sports events, join tournaments,
        and connect with students who share your passion.
-        Stay active, compete, and have fun on campus!</p>
+        <br>Stay active, compete, and have fun on campus!</p>
 
-       <a href="/HTML/page4.html">
-       <button class="Joinbtn">Join</button>
-       </a>
+       <a href="/HTML/page4.html" class=" Joinbtn"><strong>Join</strong></a>
 
   </section>
+
+  <div id="features">
+
+  <h2>Our Features</h2>
+
+  <p>
+    Our platform is designed to make sports more engaging, accessible,
+    and fun for every student.
+  </p>
+
+  <div class="cards">
+
+    <div class="card card1">
+      <h3>Easy Event Registration</h3>
+      <p>Browse and join sports events with just a few clicks.
+         No complicated steps</p>
+    </div>
+
+    <div class="card card2">
+      <h3>Rewards & Points System</h3>
+      <p>Earn points for participating in activities
+         and unlock exciting rewards.</p>
+    </div>
+
+    <div class="card card3">
+      <h3>Connect with Students</h3>
+      <p>Meet and interact with students
+         who share your sports interests.</p>
+    </div>
+
+  </div>
+  </div>
+  
+<section id="about">
+<h2>About Our Platform</h2>
+
+<div class="info">
+<p>Campus Sports Hub is a platform designed to connect students through 
+    sports activities.</p>
+
+<p>It helps students join events, find teams, and stay active on campus.</p>
+
+<h3>Vision</h3>
+<p>To build a strong sports community.</p>
+
+<h3>Mission</h3>
+<p>Encourage students to participate in sports and live a healthy life.</p>
+</div> </section>
+
+<section class="team">
+
+<h2>Our Team</h2>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Student ID</th>
+</tr>
+
+<tr>
+<td>Dina Alharbi</td>
+<td>2413547</td>
+</tr>
+
+<tr>
+<td>Mayar Alalwan</td>
+<td>2411837</td>
+</tr>
+
+<tr>
+<td>Leen Alghamdi</td>
+<td>2412383</td>
+</tr>
+</table>
+</section>
+
+
+    <div id="page">
+        <div class="form">
+    <form method="post" action="#">
+<header>Contact Us</header>
+<h3>Please Enter Your Information</h3>
+
+<!--Name-->
+<P>
+<label>First name:
+<input type="text" name="firstname" maxlength="10" minlength="3" placeholder=" Enter your first name" size="30" pattern="[a-zA-Z]+" required autofocus>
+</label>
+</P>
+
+<P>
+<label>Last name:
+<input type="text" name="lastname" maxlength="10" minlength="3" placeholder=" Enter your Last name"  size="30" pattern="[a-zA-Z]+" required>
+</label>
+</P>
+
+<!---emaile-->
+<p>
+    <label>Email Address:
+        <input type="email" name="email" maxlength="30" minlength="5" placeholder=" Enter your Email" size="30" required >
+    </label>
+</p>
+
+<!--gender-->
+<p>
+    <label>Gender:
+        <select name="gender" required>
+            <option value="">select</option>
+            <option>Female</option>
+            <option>Male</option>
+        </select>
+    </label>
+</p>
+
+<!--number-->
+<p>
+    <label>Phone Number:
+        <input type="tel" name="number" placeholder="051***" required pattern="[0-9]{10}">
+
+    </label>
+</p>
+
+<!--birth date-->
+<p>
+    <label>Date of birth:
+<input type="date" name="DOB" required max="2009-12-30"> 
+    </label>
+</p>
+
+<!--lang-->
+<p>
+    <label>Language:
+        <select name="language" required>
+             <option value="">select</option>
+            <option>English</option>
+            <option>Arabic</option>
+            <option>French</option>
+            <option>Chinese</option>
+        </select>
+    </label>
+</p>
+
+<h4>Please write your inquiry or question in the box shown in front of you</h4>
+<!--meassage-->
+<p>
+    <label>Message Box:
+        <textarea name="message" rows="5" cols="25" required minlength="10"></textarea>
+    </label>
+</p>
+ 
+<!--submit-->
+<p>
+    <input type="submit" id="contact-us" value="Send my Meassage">
+</p>
+
+<P>We will reply to your Message as soon as possible</P>
+
+    </form>
+        </div>
+
+        <div class="image">
+            <img src="/Media/photo_.jpg" alt="contact-us image" width="500">
+        </div>
+    </div>
+<p id="msg" style="color: red;"></p>
+
+<footer>
+    <p>© 2026 Campus Sports Hub</p>
+</footer>
+
+
+<script src="/JS/validation.js"></script>
 
 
 </body>
