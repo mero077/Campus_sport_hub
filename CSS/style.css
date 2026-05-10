@@ -23,6 +23,11 @@ h2 {
     padding-left: 10px;
 }
 
+h3{
+    color: #1E3A8A;
+    font-size: medium;
+}
+
 footer {
     background-color: #1E3A8A;
     color: white;
