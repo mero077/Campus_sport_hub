@@ -94,13 +94,17 @@ async function senddata() {
                 return response.json();
             } else{
                  msg.innerHTML = "Error occurred while submiting your message";
+                 throw new Error("Server error");
             }
+
         })
         .then(function(result){
-            getdata();
+           if (result) getdata();
         })
          .catch(function(err){
+            if (err.message !== "Server error") {
             msg.innerHTML = "Error occurred while submiting your message";
+            }
         });
   
 }
@@ -111,9 +115,9 @@ async function getdata() {
      try{
         const response = await fetch(endpoint);
         const data = await response.json();
-        const lastname = data[data.length - 1];
+        const lastEntry  = data[data.length - 1];
 
-        msg.innerHTML = "Thank you " + lastname.Fname + ", your message has been submit successfully! ";
+        msg.innerHTML = "Thank you " + lastEntry.firstname + ", your message has been submit successfully! ";
      }
      catch(err){
         msg.innerHTML= "There is an error occurred"

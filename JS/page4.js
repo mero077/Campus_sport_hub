@@ -78,7 +78,7 @@ async function senddata() {
         level : document.getElementsByName("level")[0].value,
         college : document.getElementsByName("college")[0].value,
         gender : document.getElementsByName("gender")[0].value,
-        email : document.getElementsByName("Email")[0].value,
+        Email : document.getElementsByName("Email")[0].value,
     };
      
     fetch(endpoint,{
@@ -129,7 +129,7 @@ async function getdata() {
              sport.textContent = "Sport:" + Participants.sport;
 
               const level = document.createElement("p");
-              level.textContent = "Level:" + Participants.Level;
+              level.textContent = "Level:" + Participants.level;
 
               cont.appendChild(name);
               cont.appendChild(sport);
