@@ -96,7 +96,7 @@ async function senddata() {
 
         })
         .then(function(result){
-            getdata();
+           if(result.status) getdata();
         })
 
         .catch(function(err){
@@ -123,17 +123,27 @@ async function getdata() {
 
         data.forEach(function(Participants) {
             const name = document.createElement("p");
-            name.textContent = "Name:" +  Participants.Fullname;
+            name.textContent = "Name : " +  Participants.Fullname;
+            name.style.color = "rgb(90, 77, 145)";
+            name.style.fontWeight = "bold";
 
              const sport = document.createElement("p");
-             sport.textContent = "Sport:" + Participants.sport;
+             sport.textContent = "Sport : " + Participants.sport;
+             sport.style.color = "rgb(90, 77, 145)";
+             sport.style.fontWeight = "bold";
 
               const level = document.createElement("p");
-              level.textContent = "Level:" + Participants.level;
+              level.textContent = "Level : " + Participants.level;
+              level.style.color = "rgb(90, 77, 145)";
+              level.style.fontWeight = "bold";
+
+              const line = document.createElement("hr");
+              line.style.border= "1px solid orange";
 
               cont.appendChild(name);
               cont.appendChild(sport);
               cont.appendChild(level);
+              cont.appendChild(line);
         });
      }
      

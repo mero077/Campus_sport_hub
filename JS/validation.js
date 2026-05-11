@@ -99,7 +99,7 @@ async function senddata() {
 
         })
         .then(function(result){
-           if (result) getdata();
+           if (result.status) getdata();
         })
          .catch(function(err){
             if (err.message !== "Server error") {

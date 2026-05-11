@@ -119,7 +119,7 @@ if (!errors.isEmpty()) {
   const query = "INSERT INTO contact_us SET ?";
   pool.query(query, data, (error, result) => {
     if (error) throw error;
-    res.send("Contact message sent successfully!");
+    res.json({ status : true});
   });
 });
 
@@ -156,7 +156,7 @@ if (!errors.isEmpty()) {
   const query = "INSERT INTO registration SET ?";
   pool.query(query, data, (error, result) => {
     if (error) throw error;
-    res.send("Registration submitted successfully!");
+    res.json({ status: true });
   });
 });
 
