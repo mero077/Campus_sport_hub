@@ -7,12 +7,12 @@ let messages = [];
 
 //presence
 messages = isFilled("Fullname", messages, "Full name is missing");
-messages = isFilled("id", messages, "Id is missing");
-messages = isFilled("email", messages, "Email is missing");
+messages = isFilled("StudentID", messages, "Id is missing");
+messages = isFilled("Email", messages, "Email is missing");
 
 //format
-messages = isId("id", messages, "Id format is wrong (must be 7 numbers)")
-messages = isEmail("email", messages, "Email format is wrong");
+messages = isId("StudentID", messages, "Id format is wrong (must be 7 numbers)")
+messages = isEmail("Email", messages, "Email format is wrong");
 
 //whitelist
 const sports = ['Football Tournament', 'Basketball Challenge', 'Running Marathon'];
@@ -66,20 +66,19 @@ function isWhitelisted(selector, whitelist, messages, msg){
         messages.push(msg);
     }
     return messages;
-
 }
 
 async function senddata() {
-    const endpoint = "http://localhost:3000/registration/insert";
+    const endpoint = "http://localhost:4000/registration/insert";
 
     const data ={
         Fullname : document.getElementsByName("Fullname")[0].value,
-        id : document.getElementsByName("id")[0].value,
+        StudentID : document.getElementsByName("StudentID")[0].value,
         sport : document.getElementsByName("sport")[0].value,
         level : document.getElementsByName("level")[0].value,
         college : document.getElementsByName("college")[0].value,
         gender : document.getElementsByName("gender")[0].value,
-        email : document.getElementsByName("email")[0].value,
+        email : document.getElementsByName("Email")[0].value,
     };
      
     fetch(endpoint,{
@@ -106,7 +105,7 @@ async function senddata() {
     }
 
 async function getdata() {
-     const endpoint = "http://localhost:3000/registration/view";
+     const endpoint = "http://localhost:4000/registration/view";
 
      try{
       const response = await fetch(endpoint);
@@ -124,16 +123,17 @@ async function getdata() {
 
         data.forEach(function(Participants) {
             const name = document.createElement("p");
-            name.textContent = "Name:" +  Participants.Full_Name;
+            name.textContent = "Name:" +  Participants.Fullname;
 
              const sport = document.createElement("p");
-             sport.textContent = "Sport:" + Participants.Event;
+             sport.textContent = "Sport:" + Participants.sport;
 
               const level = document.createElement("p");
-              level.textContent = "Level:" + Participants.Skill_Level;
+              level.textContent = "Level:" + Participants.Level;
 
               cont.appendChild(name);
               cont.appendChild(sport);
               cont.appendChild(level);
         });
      }
+     

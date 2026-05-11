@@ -72,7 +72,7 @@ function isWhitelist(selector, whitelist, messages,msg){
 }
 
 async function senddata() {
-    const endpoint = "http://localhost:3000/contact_us/insert";
+    const endpoint = "http://localhost:4000/contact_us/insert";
 
     const data = {
         firstname : document.getElementsByName("firstname")[0].value,
@@ -106,7 +106,7 @@ async function senddata() {
 }
 
 async function getdata() {
-     const endpoint = "http://localhost:3000/contact_us/view";
+     const endpoint = "http://localhost:4000/contact_us/view";
 
      try{
         const response = await fetch(endpoint);

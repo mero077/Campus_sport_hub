@@ -2,7 +2,7 @@ const express = require("express");
 const { check, validationResult } = require("express-validator");
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // Setting up DB
 const mysql = require("mysql");
@@ -16,7 +16,15 @@ const pool = mysql.createPool({
 });
 
 // Serving static website
-app.use("/", express.static("./campus_sport_hub"));
+app.use("/", express.static("./"));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/HTML/index.html");
+});
+
+app.get("/page4", (req, res) => {
+  res.sendFile(__dirname + "/HTML/page4.html");
+});
 
 // Middleware
 app.use(express.json());
@@ -61,11 +69,11 @@ function getRegistrationValidation() {
 
     check("Fullname")
       .notEmpty().withMessage("Full name is required")
-      .isLength({ min: 3, max: 30 }).withMessage("Full name must be 3-30 characters")
+      .isLength({ min: 3, max: 50 }).withMessage("Full name must be 3-50 characters")
       .trim()
       .escape(),
 
-    check("id")
+    check("StudentID")
       .notEmpty().withMessage("Student ID is required")
       .isNumeric().withMessage("Student ID must be numbers only"),
 
@@ -78,7 +86,7 @@ function getRegistrationValidation() {
     check("college")
       .notEmpty().withMessage("College is required"),
 
-    check("email")
+    check("Email")
       .notEmpty().withMessage("Email is required")
       .isEmail().withMessage("Invalid email format")
       .normalizeEmail()
@@ -86,9 +94,6 @@ function getRegistrationValidation() {
   ];
 }
 
-// ─────────────────────────────────────────
-//  CONTACT US ROUTES
-// ─────────────────────────────────────────
 
 // Insert contact
 app.post("/contact_us/insert" , getContactValidation(), (req, res) => {
@@ -101,14 +106,14 @@ if (!errors.isEmpty()) {
   });
 }
   const data = {
-    Fname      : req.body.firstname,
-    Lname      : req.body.lastname,
-    Email      : req.body.email,
-    Gender     : req.body.gender,
-    Phone      : req.body.number,
+    firstname  : req.body.firstname,
+    lastname   : req.body.lastname,
+    email      : req.body.email,
+    gender     : req.body.gender,
+    number     : req.body.number,
     DOB        : req.body.DOB,
-    Lang       : req.body.language,
-    Msg        : req.body.message,
+    language   : req.body.language,
+    message    : req.body.message,
   };
 
   const query = "INSERT INTO contact_us SET ?";
@@ -128,10 +133,6 @@ app.get("/contact_us/view", (req, res) => {
 });
 
 
-// ─────────────────────────────────────────
-//  EVENT REGISTRATION ROUTES
-// ─────────────────────────────────────────
-
 // Insert registration
 app.post("/registration/insert", getRegistrationValidation(), (req, res) => {
   const errors = validationResult(req);
@@ -143,13 +144,13 @@ if (!errors.isEmpty()) {
   });
 }
   const data = {
-    Full_Name   : req.body.Fullname,
-    Student_ID  : req.body.id,
-    Event       : req.body.sport,
-    Skill_Level : req.body.level,
-    College     : req.body.college,
-    Gender      : req.body.gender,
-    Email       : req.body.email,
+    Fullname   : req.body.Fullname,
+    StudentID  : req.body.StudentID,
+    sport      : req.body.sport,
+    level      : req.body.level,
+    college    : req.body.college,
+    gender     : req.body.gender,
+    Email      : req.body.Email,
   };
 
   const query = "INSERT INTO registration SET ?";
