@@ -113,7 +113,7 @@ async function getdata() {
         displaydata(data);}
 
         catch(err){
-        msg.innerHTML= "There is an error occurred"
+        msg.innerHTML= "There is an error occurrede"
      }
      }
 
