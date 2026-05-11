@@ -3,6 +3,8 @@ const msg = document.querySelector("#msg");
 
 form.addEventListener('submit', e=> {
    
+    e.preventDefault();
+
 let messages = [];
 
 //presence
@@ -24,7 +26,10 @@ messages = isWhitelist("language", languages, messages, " Language selection is 
 //errors
 if(messages.length > 0){
     msg.innerHTML = "  issues found is [" + messages.length + "]: " + messages.join(", ") + ".";
-    e.preventDefault();
+    
+}
+else{ 
+    senddata();
 }
 
 
@@ -64,4 +69,53 @@ function isWhitelist(selector, whitelist, messages,msg){
     }
     return messages;
 
+}
+
+async function senddata() {
+    const endpoint = "http://localhost:3000/contact_us/insert";
+
+    const data = {
+        firstname : document.getElementsByName("firstname")[0].value,
+        lastname : document.getElementsByName("lastname")[0].value,
+        email : document.getElementsByName("email")[0].value,
+        gender : document.getElementsByName("gender")[0].value,
+        number : document.getElementsByName("number")[0].value,
+        DOB : document.getElementsByName("DOB")[0].value,
+        language : document.getElementsByName("language")[0].value,
+        message : document.getElementsByName("message")[0].value,
+    };
+    fetch(endpoint,{
+            method : "post",
+            headers : { "Content-Type": "application/json" },
+            body : JSON.stringify(data) 
+        })
+        .then(function(response){
+            if(response.ok){
+                return response.json();
+            } else{
+                 msg.innerHTML = "Error occurred while submiting your message";
+            }
+        })
+        .then(function(result){
+            getdata();
+        })
+         .catch(function(err){
+            msg.innerHTML = "Error occurred while submiting your message";
+        });
+  
+}
+
+async function getdata() {
+     const endpoint = "http://localhost:3000/contact_us/view";
+
+     try{
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        const lastname = data[data.length - 1];
+
+        msg.innerHTML = "Thank you " + lastname.Fname + ", your message has been submit successfully! ";
+     }
+     catch(err){
+        msg.innerHTML= "There is an error occurred"
+     }
 }

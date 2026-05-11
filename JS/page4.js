@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const msg = document.querySelector("#msg");
 
 form.addEventListener('submit', e=> {
+    e.preventDefault();
 let messages = [];
 
 //presence
@@ -27,7 +28,9 @@ messages = isWhitelisted("gender", genders, messages, "Gender selection is inval
 //error
 if(messages.length > 0){
      msg.innerHTML = "  issues found is [" + messages.length + "]: " + messages.join(", ") + ".";
-    e.preventDefault();
+}
+else{
+    senddata();
 }
 });
 
@@ -65,3 +68,72 @@ function isWhitelisted(selector, whitelist, messages, msg){
     return messages;
 
 }
+
+async function senddata() {
+    const endpoint = "http://localhost:3000/registration/insert";
+
+    const data ={
+        Fullname : document.getElementsByName("Fullname")[0].value,
+        id : document.getElementsByName("id")[0].value,
+        sport : document.getElementsByName("sport")[0].value,
+        level : document.getElementsByName("level")[0].value,
+        college : document.getElementsByName("college")[0].value,
+        gender : document.getElementsByName("gender")[0].value,
+        email : document.getElementsByName("email")[0].value,
+    };
+     
+    fetch(endpoint,{
+            method : "post",
+            headers : { "Content-Type": "application/json" },
+            body : JSON.stringify(data) 
+        })
+        
+        .then(function(response){
+            if(response.ok){
+                return response.json();
+            } else{
+                msg.innerHTML = "Error occurred while submiting your registration";
+            }
+
+        })
+        .then(function(result){
+            getdata();
+        })
+
+        .catch(function(err){
+            msg.innerHTML = "Error occurred while submiting your registration";
+        });
+    }
+
+async function getdata() {
+     const endpoint = "http://localhost:3000/registration/view";
+
+     try{
+      const response = await fetch(endpoint);
+        const data = await response.json();
+        displaydata(data);}
+
+        catch(err){
+        msg.innerHTML= "There is an error occurred"
+     }
+     }
+
+     function displaydata(data){
+        const cont = document.getElementById("Participants");
+        cont.innerHTML="";
+
+        data.forEach(function(Participants) {
+            const name = document.createElement("p");
+            name.textContent = "Name:" +  Participants.Full_Name;
+
+             const sport = document.createElement("p");
+             sport.textContent = "Sport:" + Participants.Event;
+
+              const level = document.createElement("p");
+              level.textContent = "Level:" + Participants.Skill_Level;
+
+              cont.appendChild(name);
+              cont.appendChild(sport);
+              cont.appendChild(level);
+        });
+     }
